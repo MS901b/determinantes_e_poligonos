@@ -4,18 +4,18 @@ var acertou01 = 0;
 var acertou02 = 0;
 var acertou03 = 0;
 var acertou04 = 0;
-var flag = 0;
+var flag = 1;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
 	flag = 1;
 });
 
 
-	
+
 Event.observe(window, 'load', function(){
 	if (PosicaoAtual.Parte == 0){
-		var posicao = {Parte: 0, Questao: 'parte4_q1', Item:0};	
+		var posicao = {Parte: 0, Questao: 'parte4_q1', Item:0};
 		PegaQuestao(posicao).seleciona();
-		if (flag){			
+		if (flag){
 			if (getResp('atividade_3') != 3){
 				setResp('atividade_3',2);
 			}
@@ -26,7 +26,7 @@ Event.observe(window, 'load', function(){
 			if(getResp('a3_parte1_q2_b') != 'undefined'){
 					$('parte1_q2_b').value = getResp('a3_parte1_q2_b');
 				}
-				
+
 			if(getResp('a3_parte1_q2_c') != 'undefined'){
 					$('parte1_q2_c').value = getResp('a3_parte1_q2_c');
 				}
@@ -101,7 +101,7 @@ function corrige_q_4_a(){
 	}else{
 		applet.setVisible('text2',  false);
 		applet.setVisible('text3',  false);
-		applet.setVisible('text4',  false);	
+		applet.setVisible('text4',  false);
 		return [false];
 	}
 }
@@ -174,7 +174,7 @@ function corrige_q_5_a(valor){
 			applet.setVisible("v",true);
 		}
 		setResp('a3_parte1_q2_a',valor[0].toUpperCase());
-		$('parte1_q2_a').value = valor[0].toUpperCase(); 
+		$('parte1_q2_a').value = valor[0].toUpperCase();
 		return [true];
 	}else{
 		if (applet.isDefined("Criei1")){
@@ -195,7 +195,7 @@ function corrige_q_5_b(valor){
 		valor[0] = valor[0].replace(':','');
 		valor[0] = valor[0].replace('.','');
 	}
-	
+
 	if ((valor[0] == 'ACD')||(valor[0] == 'CDA')||(valor[0] == 'DAC')){
 		acertou03 = 1;
 				if((acertou01 == 1)&&(acertou02 == 1)&&(acertou03 == 1)&&(acertou04 == 1)){
@@ -218,7 +218,7 @@ function corrige_q_5_b(valor){
 			applet.setVisible("u",true);
 		}
 		setResp('a3_parte1_q2_b',valor[0].toUpperCase());
-		$('parte1_q2_b').value = valor[0].toUpperCase(); 
+		$('parte1_q2_b').value = valor[0].toUpperCase();
 		return [true];
 	}else{
 		if (applet.isDefined("Criei2")){
@@ -240,7 +240,7 @@ function corrige_q_5_c(valor){
 		valor[0] = valor[0].replace(':','');
 		valor[0] = valor[0].replace('.','');
 	}
-	
+
 	if ((valor[0] == 'ADE')||(valor[0] == 'DEA')||(valor[0] == 'EAD')){
 		acertou04 = 1;
 				if((acertou01 == 1)&&(acertou02 == 1)&&(acertou03 == 1)&&(acertou04 == 1)){
@@ -263,7 +263,7 @@ function corrige_q_5_c(valor){
 			applet.setVisible("v_9",true);
 		}
 		setResp('a3_parte1_q2_c',valor[0].toUpperCase());
-		$('parte1_q2_c').value = valor[0].toUpperCase(); 
+		$('parte1_q2_c').value = valor[0].toUpperCase();
 		return [true];
 	}else{
 		if (applet.isDefined("Criei3")){
@@ -312,7 +312,7 @@ function addListener_a4_p2(objName){
 				applet.renameObject(objName, "seg1");
 			}
 			if (segmentos >= 2){
-				
+
 				if ((aux%2)==0){
 					applet.deleteObject("seg0");
 					applet.renameObject(objName, "seg0");
@@ -326,7 +326,7 @@ function addListener_a4_p2(objName){
 		}
 	}else{
 		applet.setVisible(objName, false);
-	}	
+	}
 }
 
 function removeListener_a4_p2(objName){

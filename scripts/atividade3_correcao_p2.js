@@ -1,13 +1,13 @@
-var flag = 0;
+var flag = 1;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
 	flag = 1;
 });
 
 
-	
+
 Event.observe(window, 'load', function(){
 	if (PosicaoAtual.Parte == 0){
-		if (flag){			
+		if (flag){
 			if (getResp('atividade_3') != 3){
 				setResp('atividade_3',2);
 			}
@@ -62,11 +62,11 @@ function ggbOnInit(){
 			if (applet.isDefined('v_2')){
 				applet.deleteObject('v_2');
 			}
-			
+
 			applet.setVisible('text2',  false);
 			applet.setVisible('text3',  false);
 			applet.setVisible('text4',  false);
-			
+
 			applet.evalCommand("Baux1 = B - (0.5 * (B-A))");
 			applet.evalCommand("v_1 = Vector[A,Baux1]");
 			applet.evalCommand("Caux1 = C - (0.5 * (C-B))");
@@ -74,7 +74,7 @@ function ggbOnInit(){
 			applet.setVisible("v",true);
 			applet.setVisible("v_2",true);
 			applet.setVisible("v_1",true);
-			
+
 			if (applet.isDefined('Caux2')){
 				applet.deleteObject('Caux2');
 			}
@@ -95,7 +95,7 @@ function ggbOnInit(){
 			}
 			applet.evalCommand("Caux2 = D - (0.5 * (D-C))");
 			applet.evalCommand("v_5 = Vector[C,Caux2]");
-			
+
 			applet.evalCommand("Caux3 = E - (0.5 * (E-D))");
 			applet.evalCommand("v_8 = Vector[D,Caux3]");
 			applet.evalCommand("Aaux3 = A - (0.5 * (A-E))");
@@ -103,7 +103,7 @@ function ggbOnInit(){
 			applet.setVisible("w",true);
 			applet.setVisible("v_8",true);
 			applet.setVisible("v_9",true);
-			
+
 			applet.setVisible("z",true);
 			applet.setVisible("v_5",true);
 			applet.setVisible("u",true);
@@ -158,7 +158,7 @@ function ver_arestas_internas(booleano){
 		applet.setVisible('text2',  false);
 		applet.setVisible('text3',  false);
 		applet.setVisible('text4',  false);
-		
+
 	}else{
 		ver_internas = 1;
 		applet.setVisible("seg0",true);
@@ -179,7 +179,7 @@ function registerListeners_a3_p2(){
 		applet.registerUpdateListener("updateListener_a3_p2");
 		applet.registerAddListener("addListener_a3_p2");
 		applet.registerRemoveListener("removeListener_a3_p2");
-	}	
+	}
 }
 
 var pontos_a3_p2 = 0;

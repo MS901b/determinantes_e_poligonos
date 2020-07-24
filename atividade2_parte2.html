@@ -2,12 +2,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		
+
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
@@ -15,35 +15,36 @@
 		<!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+		<!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/notas.js"></script>
 		<script type="text/javascript" src="scripts/bloco.js"></script>
 		<script type="text/javascript" src="scripts/calculadora.js"></script>
 		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
+
+
 		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
 		<script type="text/javascript" src="scripts/interface.js"></script>
 		<script type="text/javascript" src="scripts/referencias.js"></script>
 		<script type="text/javascript" src="scripts/curiosidades.js"></script>
-		<script type="text/javascript" src="scripts/inputs.js"></script>	
-		
+		<script type="text/javascript" src="scripts/inputs.js"></script>
+
 		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
-		
+
 		<script type="text/javascript" src="scripts/atividade2_correcao.js"></script>
 		<script type="text/javascript" src="scripts/atividade2_conteudo.js"></script>
 		<script type="text/javascript" src="scripts/poligonos.js"></script>
 		<script type="text/javascript">
-			
+
 			var PosicaoAtual = {Atividade: 2, Parte: 1};
 			var ProximaParte = 'atividade2_parte3.html';
-				
+
 			var Popups = $H({
 				link_continuar: {
 					conteudo: 'Você não pode continuar',
@@ -51,17 +52,17 @@
 					largura: 11
 				}
 			});
-				
+
 			var Links = $H({
 			});
-				
+
 			var Perguntas = $H({
 			});
 		</script>
 		<title>Determinantes e Polígonos</title>
 	</head>
 	<body>
-	
+
 	<!--
 	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
 	Veja um exemplo no arquivo exemplo_correcao.js
@@ -78,7 +79,7 @@
 					<a href="introducao.html">Introdução</a>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<div class="limpador"></div>
 			</div>
 			<ul id="partes">
@@ -87,35 +88,32 @@
 				<div id="conteudo">
 						<!-- SalvaLocal -->
 					<div class="salva_local">
-						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
-						   <param name="menu" value="false" />
-						   <param name="movie" value="applets/SalvaLocal.swf" />
-						</object>
+						
 					</div>
-					
+
 					<div class="texto_solto">
 						<p>Na parte anterior, você concluiu que:</p>
 						<p>A<sub>ABC =</sub> <span id="a2p2_a"></span> A<sub>ABO </sub><span id="a2p2_b"></span> A<sub>BCO</sub><span id="a2p2_c"></span> A<sub>ACO</sub></p>
 						<p>Agora, essa igualdade será convertida em termos de determinantes, montando as matrizes M1, M2 e M3 de tal modo que:</p>
 						<p>½ Det(M<sub>1</sub>)= <span id="a2p2_aa"></span>A<sub>ABO</sub>, ½ Det(M<sub>2</sub>) = <span id="a2p2_bb"></span>A<sub>BCO</sub> e ½ Det(M<sub>3</sub>) = <span id="a2p2_cc"></span>A<sub>ACO</sub></p>
 					</div>
-					
+
 					<div id="questoes">
 						<div id="texto_generico">
-						
+
 						</div>
-						
+
 						<div id="parte2_q1"></div>
-		
+
 						<br class="limpador"></br>
 						<p>Com isso, a área do triângulo ABC também pode ser expressa por meio da seguinte soma de determinantes:</p>
-						
+
 						<p>A<small>ABC</small> =  ½ (Det(M<sub>1</sub>) + Det(M<sub>2</sub>) + Det(M<sub>3</sub>))</p>
-						
+
 						<p>Lembre-se que a ordem das linhas dessas matrizes é fundamental, pois ela determina o sinal do determinante de cada uma delas, e isso afeta o resultado da soma.</p>
-						
+
 						<p>Porém, a escolha dessa ordem segue uma regularidade simples e bastante prática, conforme você verá a seguir.</p>
-						
+
 						<a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>
 						<a id="link_continuar">
 							<span class="escondido">Continuar</span>
@@ -126,7 +124,7 @@
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a target="blank"; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 		<div id="applet">
@@ -141,12 +139,12 @@
 					<param name="showToolBarHelp" value="false" />
 					<param name="showAlgebraInput" value="false" />
 					<param name="scriptable" value="true" />
-					<param name="customToolBar" value="0 |">		
+					<param name="customToolBar" value="0 |">
 					<param name="language" value="pt" />
-					<param name="enableShiftDragZoom" value="false" />	
-					<param name="enableLabelDrags" value="false" />					
+					<param name="enableShiftDragZoom" value="false" />
+					<param name="enableLabelDrags" value="false" />
 				</applet>
-				
+
 				<div class="canto sup_esq"></div>
 				<div class="canto sup_dir"></div>
 				<div class="canto inf_esq"></div>
@@ -154,22 +152,22 @@
 				<div id="associacao"></div>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		<div id="associado"></div>
-		
-		
+
+
 		<div id="ferramentas">
 			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
 			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
-			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+			<!--<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>-->
 		</div>
 		<div id="calc" class="escondido"></div>
 		<div id="drag" class="escondido">
-			<div class="a_esquerda" style="float: left; margin-left: 20px; margin-top:35px;">M<sub>1</sub> =</div>	
-			<div class="matriz " style="margin-top:20px;">								
+			<div class="a_esquerda" style="float: left; margin-left: 20px; margin-top:35px;">M<sub>1</sub> =</div>
+			<div class="matriz " style="margin-top:20px;">
 				<div class="supe_esq"></div>
 				<div class="supe_dir"></div>
 					<div class="a_esquerda caixa_pequena recipiente" style="margin-left: 5px; " id="dock01"></div>
@@ -179,21 +177,21 @@
 					<div class="esquerda inferior infe_esq"></div>
 					<div class="direita inferior infe_dir"></div>
 			</div>
-			
+
 			<div id="dispensa" class="a_esquerda deposito" style="margin-left: 81px; width: 45px; height:90px; margin-top: -10px;">
 				<div id="resp01" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; "id="a2_p2_a_ponto1"></span></div>
 				<div id="resp02" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; "id="a2_p2_a_ponto2"></span></div>
 				<div id="resp03" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; "id="a2_p2_a_ponto3"></span></div>
 			</div>
-			
+
 			<script type="text/javascript">
 				var resposta = $H({
 					dock01: null,
 					dock02: null
 				});
-				
-				
-				
+
+
+
 				var gabarito = $H({
 					dock01: '',
 					dock02: ''
@@ -204,7 +202,7 @@
 
 				$w('resp01 resp02 resp03').each(function(el)
 				{
-					new Draggable(el,{revert: true,  
+					new Draggable(el,{revert: true,
 						onStart: function() {
 							de_onde = $(el).up().id;
 							trocando = false;
@@ -217,7 +215,7 @@
 							$(de_onde).removeClassName('nao_preenchido');
 						}
 					});
-					
+
 					$(el).setStyle({
 						cursor: 'move'
 					});
@@ -225,50 +223,50 @@
 				$w('dock01 dock02 dispensa').each(function(el)
 				{
 					Droppables.add(el,{
-						accept: 'resp', 
+						accept: 'resp',
 						onDrop: function(resp, qk, ev){
-																				
+
 							if(Element.empty(qk) && resp.up().id != 'dispensa')
 								resposta.set(resp.up().id,null);
-											
-							
+
+
 							if(Element.empty(qk) || qk.id == 'dispensa')
 							{
 								$(qk).appendChild(resp);
 							}
 							else
 							{
-							
+
 								if(qk.id != 'dispensa' )
 								{
-									
+
 									recipiente = resp.parentNode.id;
 									a = qk.down();
-									
+
 									resposta.set(resp.up().id,null);
 									resposta.set(resp.parentNode.id,null);
-									
+
 									$(qk).appendChild(resp);
 									$(recipiente).appendChild(a);
-																																							
+
 									resposta.set(recipiente,a.innerHTML)
 									a.setStyle({backgroundColor: 'white'});
-									
+
 									trocando = true;
 								}
 							}
-							
+
 							if (qk.id != 'dispensa')
 							{
 								largura = $(qk.id).getWidth();
 								$(resp).setStyle({
 									top: 0,
 									left: 0,
-									position: 'absolute', 
+									position: 'absolute',
 									width:(largura-12)+'px',
 									backgroundColor: 'white'
 								});
-								
+
 							}
 							else
 							{
@@ -280,7 +278,7 @@
 									width: ''
 								});
 							}
-							
+
 							if (trocando)
 							{
 								if (recipiente=='dispensa')
@@ -294,16 +292,16 @@
 									});
 								}
 							}
-							
+
 							qk.setStyle({background: '0'});
-							
+
 							if(qk.id != 'dispensa')
 								resposta.set(qk.id,resp.innerHTML);
 						}
 					});
-					
+
 				});
-				
+
 				function corrige_q_2_a_drag_aux()
 				{
 					var applet = document.ggbApplet;
@@ -311,7 +309,7 @@
 					dock01: applet.getXcoord("A")+","+applet.getYcoord("A"),
 					dock02: applet.getXcoord("B")+","+applet.getYcoord("B")
 					});
-					
+
 					if (!corrigindo)
 					{
 						var correto = true;
@@ -324,10 +322,10 @@
 							$(keys[a]).removeClassName('nao_preenchido');
 							var teste = resposta.get(keys[a]);
 							if (!teste)
-							{ 
+							{
 								$(keys[a]).addClassName('nao_preenchido');
 								correto = false;
-							} 
+							}
 							else
 							{
 								var pontosSegmento=teste.split("(");
@@ -344,7 +342,7 @@
 									}
 									else
 										$(keys[a]).addClassName('nao_preenchido');
-										
+
 								}
 								else
 								{
@@ -359,11 +357,11 @@
 					else
 						return null;
 				}
-			</script>		
+			</script>
 		</div>
 		<div id="drag2" class="escondido">
-			<div class="a_esquerda" style="float: left; margin-left: 20px; margin-top:35px;">M<sub>2</sub> =</div>	
-			<div class="matriz " style="margin-top:20px;">								
+			<div class="a_esquerda" style="float: left; margin-left: 20px; margin-top:35px;">M<sub>2</sub> =</div>
+			<div class="matriz " style="margin-top:20px;">
 				<div class="supe_esq"></div>
 				<div class="supe_dir"></div>
 					<div class="a_esquerda recipiente" style="margin-left: 5px; " id="adock01"></div>
@@ -373,21 +371,21 @@
 					<div class="esquerda inferior infe_esq"></div>
 					<div class="direita inferior infe_dir"></div>
 			</div>
-			
+
 			<div id="dispensa2" class="a_esquerda deposito" style="margin-left: 81px; width: 45px; height:100px; margin-top: -10px;">
 				<div id="aresp01" class="caixa_pequena resp"><span  style="font-style: normal; margin-top: -6px; " id="a2_p2_b_ponto1"></span></div>
 				<div id="aresp02" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; " id="a2_p2_b_ponto2"></span></div>
 				<div id="aresp03" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; " id="a2_p2_b_ponto3"></span></div>
 			</div>
-			
+
 			<script type="text/javascript">
 				var aresposta = $H({
 					adock01: null,
 					adock02: null
 				});
-				
-				
-				
+
+
+
 				var gabarito = $H({
 					adock01: '',
 					adock02: ''
@@ -398,7 +396,7 @@
 
 				$w('aresp01 aresp02 aresp03').each(function(el)
 				{
-					new Draggable(el,{revert: true,  
+					new Draggable(el,{revert: true,
 						onStart: function() {
 							de_onde = $(el).up().id;
 							trocando = false;
@@ -411,7 +409,7 @@
 							$(de_onde).removeClassName('nao_preenchido');
 						}
 					});
-					
+
 					$(el).setStyle({
 						cursor: 'move'
 					});
@@ -419,50 +417,50 @@
 				$w('adock01 adock02 dispensa2').each(function(el)
 				{
 					Droppables.add(el,{
-						accept: 'resp', 
+						accept: 'resp',
 						onDrop: function(resp, qk, ev){
-																				
+
 							if(Element.empty(qk) && resp.up().id != 'dispensa2')
 								aresposta.set(resp.up().id,null);
-											
-							
+
+
 							if(Element.empty(qk) || qk.id == 'dispensa2')
 							{
 								$(qk).appendChild(resp);
 							}
 							else
 							{
-							
+
 								if(qk.id != 'dispensa2' )
 								{
-									
+
 									recipiente = resp.parentNode.id;
 									a = qk.down();
-									
+
 									aresposta.set(resp.up().id,null);
 									aresposta.set(resp.parentNode.id,null);
-									
+
 									$(qk).appendChild(resp);
 									$(recipiente).appendChild(a);
-																																							
+
 									aresposta.set(recipiente,a.innerHTML)
 									a.setStyle({backgroundColor: 'white'});
-									
+
 									trocando = true;
 								}
 							}
-							
+
 							if (qk.id != 'dispensa2')
 							{
 								largura = $(qk.id).getWidth();
 								$(resp).setStyle({
 									top: 0,
 									left: 0,
-									position: 'absolute', 
+									position: 'absolute',
 									width:(largura-12)+'px',
 									backgroundColor: 'white'
 								});
-								
+
 							}
 							else
 							{
@@ -474,7 +472,7 @@
 									width: ''
 								});
 							}
-							
+
 							if (trocando)
 							{
 								if (recipiente=='dispensa2')
@@ -488,16 +486,16 @@
 									});
 								}
 							}
-							
+
 							qk.setStyle({background: '0'});
-							
+
 							if(qk.id != 'dispensa2')
 								aresposta.set(qk.id,resp.innerHTML);
 						}
 					});
-					
+
 				});
-				
+
 				function corrige_q_2_b_drag_aux()
 				{
 					var applet = document.ggbApplet;
@@ -505,7 +503,7 @@
 					adock01: applet.getXcoord("B")+","+applet.getYcoord("B"),
 					adock02: applet.getXcoord("C")+","+applet.getYcoord("C")
 				});
-					
+
 					if (!corrigindo)
 					{
 						var correto = true;
@@ -515,17 +513,17 @@
 							$(keys[a]).removeClassName('errado');
 							$(keys[a]).removeClassName('correto');
 							$(keys[a]).removeClassName('nao_preenchido');
-							
+
 							var teste = aresposta.get(keys[a]);
 							if (!teste)
-							{ 							
+							{
 								$(keys[a]).addClassName('nao_preenchido');
 								correto = false;
 							}
 							else
 							{
 								var pontosSegmento=teste.split("(");
-								
+
 								pontosSegmento=pontosSegmento[1].split(")");
 								var resp = pontosSegmento[0];
 								if(agabarito.get(keys[a]) != resp)
@@ -539,7 +537,7 @@
 									}
 									else
 										$(keys[a]).addClassName('nao_preenchido');
-										
+
 								}
 								else
 								{
@@ -554,11 +552,11 @@
 					else
 						return null;
 				}
-			</script>	
+			</script>
 		</div>
 		<div id="drag3" class="escondido">
-			<div class="a_esquerda" style="float: left; margin-left: 20px; margin-top:35px;">M<sub>3</sub> =</div>	
-			<div class="matriz " style="margin-top:20px;">								
+			<div class="a_esquerda" style="float: left; margin-left: 20px; margin-top:35px;">M<sub>3</sub> =</div>
+			<div class="matriz " style="margin-top:20px;">
 				<div class="supe_esq"></div>
 				<div class="supe_dir"></div>
 					<div class="a_esquerda recipiente" style="margin-left: 5px; " id="bdock01"></div>
@@ -568,21 +566,21 @@
 					<div class="esquerda inferior infe_esq"></div>
 					<div class="direita inferior infe_dir"></div>
 			</div>
-			
+
 			<div id="dispensa3" class="a_esquerda deposito" style="margin-left: 81px; width: 45px; height:100px; margin-top: -10px;">
 				<div id="bresp01" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; " id="a2_p2_c_ponto1"></span></div>
 				<div id="bresp02" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; " id="a2_p2_c_ponto2"></span></div>
 				<div id="bresp3" class="caixa_pequena resp"><span style="font-style: normal; margin-top: -6px; " id="a2_p2_c_ponto3"></span></div>
 			</div>
-			
+
 			<script type="text/javascript">
 				var bresposta = $H({
 					bdock01: null,
 					bdock02: null
 				});
-				
-				
-				
+
+
+
 				var bgabarito = $H({
 					bdock01: '',
 					bdock02: ''
@@ -593,7 +591,7 @@
 
 				$w('bresp01 bresp02 bresp3').each(function(el)
 				{
-					new Draggable(el,{revert: true,  
+					new Draggable(el,{revert: true,
 						onStart: function() {
 							de_onde = $(el).up().id;
 							trocando = false;
@@ -606,7 +604,7 @@
 							$(de_onde).removeClassName('nao_preenchido');
 						}
 					});
-					
+
 					$(el).setStyle({
 						cursor: 'move'
 					});
@@ -614,50 +612,50 @@
 				$w('bdock01 bdock02 dispensa3').each(function(el)
 				{
 					Droppables.add(el,{
-						accept: 'resp', 
+						accept: 'resp',
 						onDrop: function(resp, qk, ev){
-																				
+
 							if(Element.empty(qk) && resp.up().id != 'dispensa3')
 								bresposta.set(resp.up().id,null);
-											
-							
+
+
 							if(Element.empty(qk) || qk.id == 'dispensa3')
 							{
 								$(qk).appendChild(resp);
 							}
 							else
 							{
-							
+
 								if(qk.id != 'dispensa3' )
 								{
-									
+
 									recipiente = resp.parentNode.id;
 									a = qk.down();
-									
+
 									bresposta.set(resp.up().id,null);
 									bresposta.set(resp.parentNode.id,null);
-									
+
 									$(qk).appendChild(resp);
 									$(recipiente).appendChild(a);
-																																							
+
 									bresposta.set(recipiente,a.innerHTML)
 									a.setStyle({backgroundColor: 'white'});
-									
+
 									trocando = true;
 								}
 							}
-							
+
 							if (qk.id != 'dispensa3')
 							{
 								largura = $(qk.id).getWidth();
 								$(resp).setStyle({
 									top: 0,
 									left: 0,
-									position: 'absolute', 
+									position: 'absolute',
 									width:(largura-12)+'px',
 									backgroundColor: 'white'
 								});
-								
+
 							}
 							else
 							{
@@ -669,7 +667,7 @@
 									width: ''
 								});
 							}
-							
+
 							if (trocando)
 							{
 								if (recipiente=='dispensa3')
@@ -683,16 +681,16 @@
 									});
 								}
 							}
-							
+
 							qk.setStyle({background: '0'});
-							
+
 							if(qk.id != 'dispensa3')
 								bresposta.set(qk.id,resp.innerHTML);
 						}
 					});
-					
+
 				});
-				
+
 				function corrige_q_2_c_drag_aux()
 				{
 					var applet = document.ggbApplet;
@@ -700,7 +698,7 @@
 					bdock01: applet.getXcoord("C")+","+applet.getYcoord("C"),
 					bdock02: applet.getXcoord("A")+","+applet.getYcoord("A")
 				});
-					
+
 					if (!corrigindo)
 					{
 						var correto = true;
@@ -712,7 +710,7 @@
 							$(keys[a]).removeClassName('nao_preenchido');
 							var teste = bresposta.get(keys[a]);
 							if (!teste)
-							{ 
+							{
 								$(keys[a]).addClassName('nao_preenchido');
 								correto = false;
 							}
@@ -732,7 +730,7 @@
 									}
 									else
 										$(keys[a]).addClassName('nao_preenchido');
-										
+
 								}
 								else
 								{
@@ -747,7 +745,7 @@
 					else
 						return null;
 				}
-			</script>	
+			</script>
 		</div>
 	</body>
 </html>

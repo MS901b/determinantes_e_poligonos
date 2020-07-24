@@ -2,13 +2,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-		
+
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		
+
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
@@ -16,35 +16,36 @@
 		<!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+		<!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/notas.js"></script>
 		<script type="text/javascript" src="scripts/bloco.js"></script>
 		<script type="text/javascript" src="scripts/calculadora.js"></script>
 		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
+
+
 		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
 		<script type="text/javascript" src="scripts/interface.js"></script>
 		<script type="text/javascript" src="scripts/referencias.js"></script>
 		<script type="text/javascript" src="scripts/curiosidades.js"></script>
-		
+
 		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
-		
+
 		<script type="text/javascript" src="scripts/atividade3_correcao_p2.js"></script>
 		<script type="text/javascript" src="scripts/atividade3_conteudo.js"></script>
 		<script type="text/javascript" src="scripts/poligonos.js"></script>
 		<script type="text/javascript" src="scripts/inputs.js"></script>
 		<script type="text/javascript">
-			
+
 			var PosicaoAtual = {Atividade: 3, Parte: 1};
 			var ProximaParte = 'atividade3_parte3.html';
-				
+
 			var Popups = $H({
 				link_continuar: {
 					conteudo: 'Você não pode continuar',
@@ -52,10 +53,10 @@
 					largura: 11
 				}
 			});
-				
+
 			var Links = $H({
 			});
-				
+
 			var Perguntas = $H({
 			});
 		</script>
@@ -63,7 +64,7 @@
 		<title>Determinantes e Polígonos</title>
 	</head>
 	<body>
-	
+
 	<!--
 	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
 	Veja um exemplo no arquivo exemplo_correcao.js
@@ -80,7 +81,7 @@
 					<a href="introducao.html">Introdução</a>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<div class="limpador"></div>
 			</div>
 			<ul id="partes">
@@ -89,10 +90,7 @@
 				<div id="conteudo">
 						<!-- SalvaLocal -->
 					<div class="salva_local">
-						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
-						   <param name="menu" value="false" />
-						   <param name="movie" value="applets/SalvaLocal.swf" />
-						</object>
+						
 					</div>
 					<div class="texto_solto">
 						<p>Agora, observe ao lado o pentágono dividido em triângulos e com os percursos já indicados.</p>
@@ -103,7 +101,7 @@
 						<p>Note que as arestas internas também são percorridas no sentido anti-horário.
 							Isso significa que <strong>basta somar os determinantes das matrizes formadas pelas coordenadas dos vértices do pentágono seguindo a ordem sugerida por um percurso anti-horário para que, assim, se obtenha o dobro da área do pentágono.</strong><p>
 						<p>Esse mesmo raciocínio pode ser aplicado em qualquer polígono convexo, pois todo polígono pode ser triangulado. Assim, podemos mostrar que esse método funciona para calcular a área de qualquer polígono convexo. </p>
-					</div>					
+					</div>
 					<div id="questoes">
 						<div class="caderno">
 
@@ -114,14 +112,14 @@
 									<ol>
 										<li class="ultima">
 											<span class="icone_questao">A</span>
-											
+
 						<p>Pense, reflita e discuta com seus colegas e o professor se o método também funcionaria para calcular a área de um polígono não convexo.</p>
-				
-										</li>																				
+
+										</li>
 									</ol>
-								</li>								
+								</li>
 							</ol>
-						</div>	
+						</div>
 
 						<div id="texto_generico">
 						</div>
@@ -134,7 +132,7 @@
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a target="blank"; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 		<div id="applet">
@@ -149,12 +147,12 @@
 					<param name="showToolBarHelp" value="false" />
 					<param name="showAlgebraInput" value="false" />
 					<param name="scriptable" value="true" />
-					<param name="customToolBar" value="0 | 1 | 15 | 6">		
+					<param name="customToolBar" value="0 | 1 | 15 | 6">
 					<param name="language" value="pt" />
-					<param name="enableShiftDragZoom" value="false" />	
-					<param name="enableLabelDrags" value="false" />					
+					<param name="enableShiftDragZoom" value="false" />
+					<param name="enableLabelDrags" value="false" />
 				</applet>
-				
+
 				<div class="canto sup_esq"></div>
 				<div class="canto sup_dir"></div>
 				<div class="canto inf_esq"></div>
@@ -168,20 +166,20 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		<div id="associado"></div>
-		
-		
+
+
 		<div id="ferramentas">
 			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
 			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
-			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+			<!--<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>-->
 		</div>
 		<div id="calc" class="escondido"></div>
-		
-		
+
+
 	</body>
 </html>

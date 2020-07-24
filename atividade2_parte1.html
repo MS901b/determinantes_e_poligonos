@@ -2,12 +2,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		
+
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
@@ -15,32 +15,33 @@
 		<!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+		<!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/notas.js"></script>
 		<script type="text/javascript" src="scripts/bloco.js"></script>
 		<script type="text/javascript" src="scripts/calculadora.js"></script>
 		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
+
+
 		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
 		<script type="text/javascript" src="scripts/interface.js"></script>
 		<script type="text/javascript" src="scripts/referencias.js"></script>
 		<script type="text/javascript" src="scripts/curiosidades.js"></script>
 		<script type="text/javascript" src="scripts/inputs.js"></script>
-		
+
 		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
-		
+
 		<script type="text/javascript" src="scripts/atividade2_correcao.js"></script>
 		<script type="text/javascript" src="scripts/atividade2_conteudo.js"></script>
 		<script type="text/javascript" src="scripts/poligonos.js"></script>
 		<script type="text/javascript">
-			
+
 			var PosicaoAtual = {Atividade: 2, Parte: 0};
 			var ProximaParte = 'atividade2_parte2.html';
 			var Popups = $H({
@@ -50,10 +51,10 @@
 					largura: 11
 				}
 			});
-				
+
 			var Links = $H({
 			});
-				
+
 			var Perguntas = $H({
 				unset_inicial: {
 					conteudo: 'Você deseja alterar o valor, isto fará com que você precise refazer as questões que tinham como base este valor?',
@@ -68,7 +69,7 @@
 		<title>Determinantes e Polígonos</title>
 	</head>
 	<body>
-	
+
 	<!--
 	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
 	Veja um exemplo no arquivo exemplo_correcao.js
@@ -85,7 +86,7 @@
 					<a href="introducao.html">Introdução</a>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<div class="limpador"></div>
 			</div>
 			<ul id="partes">
@@ -94,19 +95,16 @@
 				<div id="conteudo">
 						<!-- SalvaLocal -->
 					<div class="salva_local">
-						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
-						   <param name="menu" value="false" />
-						   <param name="movie" value="applets/SalvaLocal.swf" />
-						</object>
+						
 					</div>
-					
+
 					<div class="texto_solto">
 							<p>Este software foi elaborado com o objetivo de apresentar a você um método simples e versátil, baseado no cálculo de determinantes, para se calcular a área de polígonos a partir das coordenadas de seus vértices.</p>
-							
+
 							<p>Para tanto, a primeira utilização desse método será com o tipo mais simples de polígono, o triângulo.</p>
 
 						</div>
-											
+
 						<div id="valor_inicial" class="caixa valor_inicial">
 							<div class="item sem_titulo">
 								<p>Escolha três pontos, na ferramenta ao lado, para que se forme o triângulo a ser estudado.</p>
@@ -114,7 +112,7 @@
 								<a id="link_valor_inicial" href="javascript:;" onclick="javascript:funcao_applet_atividade2();">Construir triângulo</a>
 								<br class="limpador"></br>
 								<p>Esse valor será usado em toda esta atividade.</p>
-								
+
 							</div>
 						</div>
 						<script type="text/javascript">
@@ -123,19 +121,19 @@
 						<div class="texto_solto">
 							<p>Para que a relação entre área e determinante (que você viu na atividade anterior) seja utilizada, tente relacionar o triângulo que você construiu, ao lado, com os triângulos formados por dois dos três vértices e a origem.</p>
 						</div>
-						
+
 						<div class="caixa instrucoes">
 							<h2>Instruções</h2>
 							<p>Clicando nos botões abaixo do eixo cartesiano, na ferramenta ao lado, você pode visualizar os triângulos ABO, BCO e ACO.</p>
 							<p>Movendo os polígonos azul, verde e vermelho, você pode ver de que forma eles se combinam para gerar o triângulo ABC.</p>
 						</div>
-						
+
 						<div id="questoes">
 							<div id="texto_generico">
 							</div>
-							
-							<div id="parte1_q1"></div>											
-													
+
+							<div id="parte1_q1"></div>
+
 							<div class="limpador"></div>
 							<p>A expressão acima envolve somas e subtrações de áreas, e você pôde obtê-la analisando visualmente a sobreposição dos triângulos.</p>
 							<p>A seguir, será visto como calcular essas áreas usando determinantes. Com isso, será eliminado o problema de escolha de sinais.</p>
@@ -149,7 +147,7 @@
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a target="blank"; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 		<div id="applet">
@@ -165,14 +163,14 @@
 					<param name="showToolBarHelp" value="false" />
 					<param name="showAlgebraInput" value="false" />
 					<param name="scriptable" value="true" />
-					<param name="customToolBar" value="0 | 1 |">		
+					<param name="customToolBar" value="0 | 1 |">
 					<param name="language" value="pt" />
 					<param name="shiftDragZoom" value="false" />
-					<param name="enableShiftDragZoom" value="false" />	
+					<param name="enableShiftDragZoom" value="false" />
 					<param name="enableLabelDrags" value="false" />
- 					
+
 				</applet>
-				
+
 				<div class="canto sup_esq"></div>
 				<div class="canto sup_dir"></div>
 				<div class="canto inf_esq"></div>
@@ -185,17 +183,17 @@
 				<input id="botao3" type="button" class="botao " value="&#916;ACO" onclick="javascript:verPoli3();"/>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		<div id="associado"></div>
-		
-		
+
+
 		<div id="ferramentas">
 			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
 			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
-			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+			<!--<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>-->
 		</div>
 		<div id="calc" class="escondido"></div>
 		<div id="drag" class="escondido">
@@ -214,17 +212,17 @@
 				<div id="resp05" class="caixa_pequena resp">-</div>
 				<div id="resp06" class="caixa_pequena resp">-</div>
 			</div>
-			
-			
+
+
 			<script type="text/javascript">
 				var resposta = $H({
 					dock01: null,
 					dock02: null,
 					dock03: null
 				});
-				
-				
-				
+
+
+
 				var gabarito = $H({
 					dock01: '-',
 					dock02: '+',
@@ -236,7 +234,7 @@
 
 				$w('resp01 resp02 resp03 resp04 resp05 resp06').each(function(el)
 				{
-					new Draggable(el,{revert: true,  
+					new Draggable(el,{revert: true,
 						onStart: function() {
 							de_onde = $(el).up().id;
 							trocando = false;
@@ -249,7 +247,7 @@
 							$(de_onde).removeClassName('nao_preenchido');
 						}
 					});
-					
+
 					$(el).setStyle({
 						cursor: 'move'
 					});
@@ -257,50 +255,50 @@
 				$w('dock01 dock02 dock03 dispensa').each(function(el)
 				{
 					Droppables.add(el,{
-						accept: 'resp', 
+						accept: 'resp',
 						onDrop: function(resp, qk, ev){
-																				
+
 							if(Element.empty(qk) && resp.up().id != 'dispensa')
 								resposta.set(resp.up().id,null);
-											
-							
+
+
 							if(Element.empty(qk) || qk.id == 'dispensa')
 							{
 								$(qk).appendChild(resp);
 							}
 							else
 							{
-							
+
 								if(qk.id != 'dispensa' )
 								{
-									
+
 									recipiente = resp.parentNode.id;
 									a = qk.down();
-									
+
 									resposta.set(resp.up().id,null);
 									resposta.set(resp.parentNode.id,null);
-									
+
 									$(qk).appendChild(resp);
 									$(recipiente).appendChild(a);
-																																							
+
 									resposta.set(recipiente,a.innerHTML)
 									a.setStyle({backgroundColor: 'white'});
-									
+
 									trocando = true;
 								}
 							}
-							
+
 							if (qk.id != 'dispensa')
 							{
 								largura = $(qk.id).getWidth();
 								$(resp).setStyle({
 									top: 0,
 									left: 0,
-									position: 'absolute', 
+									position: 'absolute',
 									width:(largura-12)+'px',
 									backgroundColor: 'white'
 								});
-								
+
 							}
 							else
 							{
@@ -312,7 +310,7 @@
 									width: ''
 								});
 							}
-							
+
 							if (trocando)
 							{
 								if (recipiente=='dispensa')
@@ -326,20 +324,20 @@
 									});
 								}
 							}
-							
+
 							qk.setStyle({background: '0'});
-							
+
 							if(qk.id != 'dispensa')
 								resposta.set(qk.id,resp.innerHTML);
 						}
 					});
-					
+
 				});
-				
+
 				function corrige_q8a()
 				{
 					var applet = document.ggbApplet;
-					
+
 					if((applet.getXcoord("C")*applet.getYcoord("A") - applet.getXcoord("A")*applet.getYcoord("C")) < 0){
 						if((applet.getXcoord("A")*applet.getYcoord("B") - applet.getXcoord("B")*applet.getYcoord("A")) < 0){
 							if((applet.getXcoord("B")*applet.getYcoord("C") - applet.getXcoord("C")*applet.getYcoord("B")) < 0){
@@ -377,7 +375,7 @@
 								setResp('sinal02','+');
 								setResp('sinal03','-');
 							}
-							
+
 						}
 					}else{
 						if((applet.getXcoord("A")*applet.getYcoord("B") - applet.getXcoord("B")*applet.getYcoord("A")) < 0){
@@ -416,10 +414,10 @@
 								setResp('sinal02','+');
 								setResp('sinal03','+');
 							}
-							
+
 						}
 					}
-					
+
 					if (!corrigindo)
 					{
 						var correto = true;
@@ -440,7 +438,7 @@
 								}
 								else
 									$(keys[a]).addClassName('nao_preenchido');
-									
+
 							}
 							else
 							{
@@ -454,8 +452,8 @@
 					else
 						return null;
 				}
-			</script>		
+			</script>
 		</div>
-		
+
 	</body>
 </html>

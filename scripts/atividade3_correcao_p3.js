@@ -7,7 +7,7 @@ var poligono = new Array();
 var resp_aluno;
 var maior = 0;
 var xml;
-var flag = 0;
+var flag = 1;
 var teste = '';
 var teste2 = '';
 var pontos_aux = 0 ;
@@ -53,7 +53,7 @@ function corrige_q_6_a(valor)
 		valor[0] = valor[0].replace('.','');
 	}
 	valor[0] = valor[0].toUpperCase();
-	
+
 	resp_aluno = "";
 	resp_aluno = valor[0];
 	var string_resp = "";
@@ -64,17 +64,17 @@ function corrige_q_6_a(valor)
 		string_resp+= poligono[i];
 	}
 	for (var i = 0; i <= pontos_aux; i++){
-			
+
 					if (applet.isDefined('det'+i)){
 						applet.deleteObject('det'+i);
-						
+
 					}
 			}
 	for (var i = 0; i < poligono.length; i++){
 		primeira_vez = true;
 		if ((resp_aluno == string_resp.substring(i,poligono.length + i))&&(primeira_vez)){
 			primeira_vez = false;
-			
+
 			var aux = 3;
 			var k = 0;
 			var string_area = "";
@@ -85,14 +85,14 @@ function corrige_q_6_a(valor)
 			teste = "= &#189;. {";
 			var A = resp_aluno.charAt(0);
 			var B = resp_aluno.charAt(1);
-						
+
 			for (var j = 0; j < resp_aluno.length-1; j++){
-				
+
 						aux++;
 						var P1 = resp_aluno.charAt(j);
 						var P2 = resp_aluno.charAt(j+1);
 						applet.evalCommand("det"+aux+" = Determinant[{{x("+P1+"),y("+P1+")},{x("+P2+"),y("+P2+")}}]");
-						
+
 						string_area += 'det'+aux+'+';
 						area2 += '"+("+';
 						area2+= 'det'+aux;
@@ -105,12 +105,12 @@ function corrige_q_6_a(valor)
 						teste2 += P1 + ',' + P2;
 						teste2 += '</sub>)+';
 			}
-				
+
 				aux = aux+2;
 				var P1 = resp_aluno.charAt(j);
 				var P2 = resp_aluno.charAt(0);
 				applet.evalCommand("det"+aux+" = Determinant[{{x("+P1+"),y("+P1+")},{x("+P2+"),y("+P2+")}}]");
-				
+
 				string_area += "det"+aux;
 				area2 += '"+("+';
 				area2+= 'det'+aux;
@@ -144,7 +144,7 @@ function corrige_q_6_a(valor)
 				$('span4').update('Area = ' + applet.getValue('area').toFixed(1));
 			    $('parte3_q3_a').value = valor[0];
 				pontos_aux = aux;
-				
+
 
 					return [true];
 		}else if (resp_aluno == string_resp.substring(i,poligono.length + i)){
@@ -180,7 +180,7 @@ function funcao_t3(){
 	applet.evalCommand("area = area_2/2");
 
 	$('span4').update('Area = ' + applet.getValue('area').toFixed(0));
-	
+
 }
 
 function ggbOnInit(){
@@ -198,15 +198,15 @@ function registerListeners_a3_p2(){
 var pontos_a3_p2 = 0;
 function addListener_a3_p2(objName) {
 var applet = document.ggbApplet;
-	
+
 	if (!criar_poli){
-	
+
 	strType = applet.getObjectType(objName);
 	strCommand = applet.getCommandString(objName);
 	var interseccoes = new Array();
 	var indice1;
 	var indice2;
-	
+
 			if (strType == "point" ){
 				if (objName == "ponto_intersec"){
 					if(!isNaN(applet.getXcoord(objName))){
@@ -214,10 +214,10 @@ var applet = document.ggbApplet;
 						interseccoes.push([i_interseccao,pontosSegmento[0],pontosSegmento[1],applet.getXcoord(objName),applet.getYcoord(objName)]);
 						i_interseccao++;
 						applet.setVisible(objName, 0);
-						applet.renameObject(objName, "int" + i_interseccao);					
+						applet.renameObject(objName, "int" + i_interseccao);
 						}else{
 								applet.deleteObject(objName);
-						}				
+						}
 				}else{
 					if ((applet.getYcoord(objName) < 0)||(criar_poli)){
 						pontos_a3_p2++;
@@ -232,10 +232,10 @@ var applet = document.ggbApplet;
 									interseccoes.push([i_interseccao,pontosSegmento[0],pontosSegmento[1],applet.getXcoord(objName),applet.getYcoord(objName)]);
 									i_interseccao++;
 									applet.setVisible(objName, 0);
-									applet.renameObject(objName, "int" + i_interseccao);					
+									applet.renameObject(objName, "int" + i_interseccao);
 								}else{
 									applet.deleteObject(objName);
-								}				
+								}
 							}else{
 								if(!criar_poli){
 									if (strCommand.substring(0,nomePontoEmReta.length)==nomePontoEmReta) {
@@ -251,18 +251,18 @@ var applet = document.ggbApplet;
 									else if (pontos_a3_p2 >= 8){
 										applet.deleteObject(objName);
 									} else {
-										
+
 										var x = applet.getXcoord(objName);
 										var y = applet.getYcoord(objName);
-										
+
 										x = roundNumber(x,0);
 										y = roundNumber(y,0);
 
 										//applet.setCoords(objName,x,y);
-									
+
 										applet.setPointSize(objName, 3);
 										applet.setLabelVisible(objName,1);
-										
+
 										applet.evalCommand("distanciaO" + objName + " = Distance[O," + objName + "]");
 										pontos_a3_p2++;
 									}
@@ -288,7 +288,7 @@ var applet = document.ggbApplet;
 				}
 			}
 	}else{
-		
+
 		var applet = document.ggbApplet;
 		strType = applet.getObjectType(objName);
 		if ((strType != "text")&&(strType != "numeric")){
@@ -314,7 +314,7 @@ function pontos_segmentos_a3_p2(){
 		ok = 0;
 		return ok;
 	}else{
-		var pontos_ext = new Array();	
+		var pontos_ext = new Array();
 		for (i=0; i < objNumber; i++) {
 			strName = applet.getObjectName(i);
 			strType = applet.getObjectType(strName);
@@ -328,7 +328,7 @@ function pontos_segmentos_a3_p2(){
 				arestas_em_ponto[indice2] =0;
 				}
 		}
-		
+
 		for (i=0; i < objNumber; i++) {
 			strName = applet.getObjectName(i);
 			strType = applet.getObjectType(strName);
@@ -362,10 +362,10 @@ function pontos_segmentos_a3_p2(){
 		for (i = 0; i < pontos_a3_p2; i++){
 			arestas_em_ponto[i] = 0;
 		}
-	
+
 		if ((numero_segmentos<3)||(numero_segmentos>14)){
 			if (applet.isDefined('terror')){applet.deleteObject('terror')};
-			
+
 			applet.evalCommand('terror = Text["O poligono nao esta correto.", (7.3,-1.75)]');
 			applet.setColor('terror', 255, 0, 0);
 				InitializeTimer();
@@ -418,14 +418,14 @@ function removi_ponto_vertice(objName){
 			applet.deleteObject("t6");
 			$('valor_inicial').removeClassName('desabilitada');
 			$('link_valor_inicial').show();
-			$('unset_inicial').hide();	
+			$('unset_inicial').hide();
 			adicionaEsperando({Parte:2, Questao:'parte4_q3', Item: 0});
-			
+
 			for (var i = 0; i <= pontos_aux; i++){
-			
+
 					if (applet.isDefined('det'+i)){
 						applet.deleteObject('det'+i);
-						
+
 					}
 			}
 }
@@ -433,11 +433,11 @@ function removi_ponto_vertice(objName){
 function unset_inicial()
 {
 	if (this.resultado == 'sim')
-	{	
+	{
 		recomecar_applet_atividade3_parte2();
 		$('valor_inicial').removeClassName('desabilitada');
 		$('link_valor_inicial').show();
-		$('unset_inicial').hide();	
+		$('unset_inicial').hide();
 		adicionaEsperando({Parte:2, Questao:'parte4_q3', Item: 0});
 		$('span1').update("");
 		$('span2').update("");
@@ -450,7 +450,7 @@ function funcao_cria_poli_a3_p2(){
 	if (!criar_poli){
 		if(pontos_segmentos_a3_p2()){
 			verifica_interseccoes_a3_p2();
-			
+
 			if (i_interseccao == 0){
 				var pontos = new Array();
 				var segmentos = new Array();
@@ -472,7 +472,7 @@ function funcao_cria_poli_a3_p2(){
 							applet.setVisible("angulo" + strName + "EixoX",0);
 						}
 				}
-				
+
 
 				for (i=0; i < objNumber; i++) {
 					strName = applet.getObjectName(i);
@@ -483,7 +483,7 @@ function funcao_cria_poli_a3_p2(){
 						{
 							pontos.push([strName,applet.getXcoord(strName),applet.getYcoord(strName)]);
 						}
-						
+
 					if (strType == "segment" )
 						{
 							pontosSegmento=getPontosSegmento(strCommand);
@@ -494,26 +494,26 @@ function funcao_cria_poli_a3_p2(){
 							pontosSegmento=getPontosSegmento(strCommand);
 							distancias.push([strName,pontosSegmento[1],applet.getValue(strName)]);
 						}
-							
+
 				}
-				
+
 				var minimo = new Array();
 				minimo.push([0,0,1000]);
 				for (i = 0; i < distancias.length; i++){
 					if (distancias[i][2] < minimo[0][2])
 						{
-							
+
 							minimo[0][0] = distancias[i][0];
 							minimo[0][1] = distancias[i][1];
 							minimo[0][2] = distancias[i][2];
 						}
 				}
-				
+
 				var arestas = new Array();
 				for (i = 0; i < segmentos.length; i++){
-					
+
 					if ((segmentos[i][1] == minimo[0][1])||(segmentos[i][2] == minimo[0][1])){
-						
+
 						arestas.push([segmentos[i][0],segmentos[i][1],segmentos[i][2],segmentos[i][3]]);
 					}
 				}				applet.setCoords("W", -30,applet.getYcoord(minimo[0][1]));
@@ -542,8 +542,8 @@ function funcao_cria_poli_a3_p2(){
 					arestas.splice(1,1,([arestas[1][0],arestas[1][1],arestas[1][2],aux]));
 					segmentos.splice(1,1,([segmentos[1][0],segmentos[1][1],segmentos[1][2],aux]));
 					applet.deleteObject("angulo" + arestas[1][2] + "EixoX");
-					}			
-				
+					}
+
 				var strResposta ="poly1 = Polygon[";
 				var atual;
 
@@ -566,7 +566,7 @@ function funcao_cria_poli_a3_p2(){
 							segmentos.splice(i,1,"");
 						}
 					}
-					
+
 				}else{
 					if (arestas[1][1] != minimo [0][1]){
 						poligono.push([arestas[1][1]]);
@@ -588,7 +588,7 @@ function funcao_cria_poli_a3_p2(){
 				strResposta += ','
 				k = 2;
 				var atual_aux = atual;
-				
+
 				while (k < segmentos.length){
 					atual = atual_aux;
 					for (i=0; i < segmentos.length; i++) {
@@ -606,15 +606,15 @@ function funcao_cria_poli_a3_p2(){
 							segmentos.splice(i,1,"");
 							strResposta += ',';
 						}
-					}				
+					}
 					k++;
 				}
-				
+
 				strResposta = strResposta.substring(0, strResposta.length-1);
 				strResposta += ']';
-				
-				
-				
+
+
+
 				var pontos_poligono = strResposta.length - 15;
 				pontos_poligono--;
 				if ((pontos_poligono/2) == pontos_a3_p2){
@@ -627,7 +627,7 @@ function funcao_cria_poli_a3_p2(){
 					$('unset_inicial').show();
 					removeEsperando({Parte: 2, Questao:'parte4_q3', Item: 0}, '');
 				}else{
-					var applet = document.ggbApplet;		
+					var applet = document.ggbApplet;
 					if (applet.isDefined('terror')){applet.deleteObject('terror')};
 					applet.evalCommand('terror = Text["O poligono nao esta correto.", (7.3,-1.75)]');
 					applet.setColor('terror', 255, 0, 0);
@@ -637,7 +637,7 @@ function funcao_cria_poli_a3_p2(){
 					poligono = new Array();
 				}
 			}else{
-				var applet = document.ggbApplet;		
+				var applet = document.ggbApplet;
 				if (applet.isDefined('terror')){applet.deleteObject('terror')};
 				applet.evalCommand('terror = Text["O poligono nao esta correto.", (7.3,-1.75)]');
 				applet.setColor('terror', 255, 0, 0);
@@ -655,22 +655,22 @@ function funcao_cria_poli_a3_p2(){
 function limpa_angulos(){
 	var applet = document.ggbApplet;
 	var i = 0;
-	
+
 	var objNumber = applet.getObjectNumber();
 	for (i=0; i < objNumber; i++) {
 		strName = applet.getObjectName(i);
 		strType = applet.getObjectType(strName);
 		strCommand = applet.getCommandString(strName);
 		if (strType == "segment" )
-			{	
+			{
 				applet.deleteObject("angulo" + strName + "EixoX");
 			}
 	}
-	
+
 	for (i = 0; i < i_interseccao; i++){
 		var aux = i + 1;
 		applet.deleteObject("int" + aux);
-	}		
+	}
 }
 
 function verifica_interseccoes_a3_p2(){
@@ -678,7 +678,7 @@ function verifica_interseccoes_a3_p2(){
 	var objNumber = applet.getObjectNumber();
 	var pontosSegmento;
 	var segbackup = new Array();
-	
+
 	for (var i=0; i < objNumber; i++) {
 		strName = applet.getObjectName(i);
 		strType = applet.getObjectType(strName);
@@ -687,7 +687,7 @@ function verifica_interseccoes_a3_p2(){
 			{
 				pontosSegmento=getPontosSegmento(strCommand);
 				segbackup.push([strName,pontosSegmento[0],pontosSegmento[1],applet.getValue("angulo" + strName + "EixoX")]);
-			}				
+			}
 	}
 
 	var applet = document.ggbApplet;
@@ -806,7 +806,7 @@ function StartTheTimer()
         StopTheClock()
 		var applet = document.ggbApplet;
 		if (applet.isDefined('terror')){applet.deleteObject('terror')};
-		applet.deleteObject("terror");    
+		applet.deleteObject("terror");
 	}
     else
     {

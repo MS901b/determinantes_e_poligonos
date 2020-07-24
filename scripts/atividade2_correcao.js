@@ -1,4 +1,4 @@
-var flag = 0;
+var flag = 1;
 var construido = 0;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
 	flag = 1;
@@ -6,7 +6,7 @@ Event.observe(document, 'flash:SalvaLocal', function(ev){
 
 Event.observe(window, 'load', function(){
 	if (PosicaoAtual.Parte == 0){
-		if (flag){			
+		if (flag){
 			if (getResp('atividade_2') != 3){
 				setResp('atividade_2',2);
 			}
@@ -14,7 +14,7 @@ Event.observe(window, 'load', function(){
 	}
 Event.observe('link_continuar', 'focus', function(evento){
 	if (PosicaoAtual.Parte == 3){
-		if (flag){	
+		if (flag){
 			if(($('link_continuar').className) == 'ativado'){
 				setResp('atividade_2',3);
 			}
@@ -46,7 +46,7 @@ Event.observe(window, 'load', function(){
 		$('botao2').addClassName('desabilitado');
 		$('botao3').addClassName('desabilitado');
 	}
-	
+
 	if (PosicaoAtual.Parte == 1){
 		if (salva){
 		$('a2p2_aaa').update(getResp('sinal01'));
@@ -54,7 +54,7 @@ Event.observe(window, 'load', function(){
 		$('a2p2_ccc').update(getResp('sinal03'));
 		}
 	}
-	
+
 	if (PosicaoAtual.Parte == 3){
 		if(getResp('parte4_q3_a') != 'undefined'){
 				$('parte4_q3_a').value = getResp('parte4_q3_a');
@@ -63,17 +63,17 @@ Event.observe(window, 'load', function(){
 		if(getResp('parte4_q3_b') != 'undefined'){
 				$('parte4_q3_b').value = getResp('parte4_q3_b');
 			}
-			
+
 		if(getResp('parte4_q3_c') != 'undefined'){
 				$('parte4_q3_c').value = getResp('parte4_q3_c');
 			}
-			
+
 		if(getResp('parte4_q3_d') != 'undefined'){
 				$('parte4_q3_d').value = getResp('parte4_q3_d');
 			}
-	
+
 	}
-	
+
 });
 
 // função que é chamada sempre que todas as questões de uma determinada parte são acertadas
@@ -184,7 +184,7 @@ function corrige_q_6_a(valor){
 				||((valor[0].charAt(0).toUpperCase()=='C')&&(valor[0].charAt(1).toUpperCase()=='B')&&(valor[0].charAt(2).toUpperCase()=='A'))
 				||((valor[0].charAt(0).toUpperCase()=='B')&&(valor[0].charAt(1).toUpperCase()=='A')&&(valor[0].charAt(2).toUpperCase()=='C'))){
 				setResp('parte4_q3_a',valor[0].toUpperCase());
-				$('parte4_q3_a').value = valor[0].toUpperCase(); 	
+				$('parte4_q3_a').value = valor[0].toUpperCase();
 			return [true];
 		}else{
 			return [false];
@@ -207,7 +207,7 @@ function corrige_q_6_b(valor){
 				||((valor[0].charAt(0).toUpperCase()=='A')&&(valor[0].charAt(1).toUpperCase()=='B')&&(valor[0].charAt(2).toUpperCase()=='C'))
 				||((valor[0].charAt(0).toUpperCase()=='C')&&(valor[0].charAt(1).toUpperCase()=='A')&&(valor[0].charAt(2).toUpperCase()=='B'))){
 				setResp('parte4_q3_b',valor[0].toUpperCase());
-				$('parte4_q3_b').value = valor[0].toUpperCase(); 			
+				$('parte4_q3_b').value = valor[0].toUpperCase();
 				return [true];
 		}else{
 			return [false];
@@ -229,7 +229,7 @@ function corrige_q_6_c(valor){
 				||((valor[0].charAt(0).toUpperCase()=='C')&&(valor[0].charAt(1).toUpperCase()=='B')&&(valor[0].charAt(2).toUpperCase()=='A'))
 				||((valor[0].charAt(0).toUpperCase()=='B')&&(valor[0].charAt(1).toUpperCase()=='A')&&(valor[0].charAt(2).toUpperCase()=='C'))){
 				setResp('parte4_q3_c',valor[0].toUpperCase());
-				$('parte4_q3_c').value = valor[0].toUpperCase(); 
+				$('parte4_q3_c').value = valor[0].toUpperCase();
 			return [true];
 		}else{
 			return [false];
@@ -252,7 +252,7 @@ function corrige_q_6_d(valor){
 				||((valor[0].charAt(0).toUpperCase()=='A')&&(valor[0].charAt(1).toUpperCase()=='B')&&(valor[0].charAt(2).toUpperCase()=='C'))
 				||((valor[0].charAt(0).toUpperCase()=='C')&&(valor[0].charAt(1).toUpperCase()=='A')&&(valor[0].charAt(2).toUpperCase()=='B'))){
 				setResp('parte4_q3_d',valor[0].toUpperCase());
-				$('parte4_q3_d').value = valor[0].toUpperCase(); 	
+				$('parte4_q3_d').value = valor[0].toUpperCase();
 				return [true];
 		}else{
 			return [false];
@@ -273,7 +273,7 @@ function ggbOnInit(){
 				applet.setXML(minhaString);
 				if (getResp('construi_p1') == 1){
 				$('valor_inicial').addClassName('desabilitada');
-				
+
 				$('link_valor_inicial').hide();
 				$('unset_inicial').show();
 				removeEsperando({Parte: 0, Questao:'parte1_q1', Item: 0}, '');
@@ -281,7 +281,7 @@ function ggbOnInit(){
 				$('botao2').removeClassName('desabilitado');
 				$('botao3').removeClassName('desabilitado');
 				pontos_a2 = 3;
-				 
+
 				}
 			}else{
 				setResp('xml_applet_p1_limpo',applet.getXML());
@@ -291,7 +291,7 @@ function ggbOnInit(){
 			setResp('parte1_q3_b',0);
 		}
 	registerListeners_a2_p1();
-	
+
 	}
 	if ((PosicaoAtual.Parte == 1)){
 		var applet = document.ggbApplet;
@@ -313,11 +313,11 @@ function ggbOnInit(){
 		$('a2_p2_a_ponto1').update("("+applet.getXcoord("A")+","+applet.getYcoord("A")+")");
 		$('a2_p2_a_ponto2').update("("+applet.getXcoord("B")+","+applet.getYcoord("B")+")");
 		$('a2_p2_a_ponto3').update("("+applet.getXcoord("C")+","+applet.getYcoord("C")+")");
-		
+
 		$('a2_p2_b_ponto1').update("("+applet.getXcoord("A")+","+applet.getYcoord("A")+")");
 		$('a2_p2_b_ponto2').update("("+applet.getXcoord("B")+","+applet.getYcoord("B")+")");
 		$('a2_p2_b_ponto3').update("("+applet.getXcoord("C")+","+applet.getYcoord("C")+")");
-		
+
 		$('a2_p2_c_ponto1').update("("+applet.getXcoord("A")+","+applet.getYcoord("A")+")");
 		$('a2_p2_c_ponto2').update("("+applet.getXcoord("B")+","+applet.getYcoord("B")+")");
 		$('a2_p2_c_ponto3').update("("+applet.getXcoord("C")+","+applet.getYcoord("C")+")");
@@ -351,7 +351,7 @@ function ggbOnInit(){
 
 			if ($('matrizM1'))
 			{
-				
+
 				var dados = [
 								[{tipo: 'texto', value: a_x},	{tipo: 'texto', value: a_y}],
 								[{tipo: 'texto', value: b_x},  {tipo: 'texto', value: b_y}]
@@ -361,7 +361,7 @@ function ggbOnInit(){
 			}
 			if ($('matrizM2'))
 			{
-				
+
 				var dados = [
 								[{tipo: 'texto', value: b_x},	{tipo: 'texto', value: b_y}],
 								[{tipo: 'texto', value: c_x},  {tipo: 'texto', value: c_y}]
@@ -371,7 +371,7 @@ function ggbOnInit(){
 			}
 			if ($('matrizM3'))
 			{
-				
+
 				var dados = [
 								[{tipo: 'texto', value: c_x},	{tipo: 'texto', value: c_y}],
 								[{tipo: 'texto', value: a_x},  {tipo: 'texto', value:  a_y}]
@@ -379,7 +379,7 @@ function ggbOnInit(){
 				var matriz = new Matriz(dados, false, true);
 				$('matrizM3').insert(matriz.divCont);
 			}
-			
+
 		}
 	}
 }
@@ -395,12 +395,12 @@ function registerListeners_a2_p1(){
 
 var pontos_a2 = 0;
 var construi_triangulo = 0;
-function addListener_a2_p1(objName) { 
+function addListener_a2_p1(objName) {
 	// Se objeto for ponto, adciona label
 	var applet = document.ggbApplet;
 	strType = applet.getObjectType(objName);
 	strCommand = applet.getCommandString(objName);
-	
+
 		if (strType == "point" )
 			{
 				if (((strCommand.length > 1)&&(strCommand.length < 10))||(pontos_a2 == 3)){
@@ -410,17 +410,17 @@ function addListener_a2_p1(objName) {
 					if((pontos_a2 <= 2)&&(pontos_a2 <=2)){
 					var x = applet.getXcoord(objName);
 					var y = applet.getYcoord(objName);
-					
+
 					x = roundNumber(x,0);
 					y = roundNumber(y,0);
 
 					applet.setCoords(objName,x,y);
-				
+
 					applet.setPointSize(objName, 4);
 					applet.setLabelVisible(objName,false);
 					applet.evalCommand("distanciaO" + objName + " = Distance[O," + objName + "]");
 					pontos_a2++;
-					
+
 					if (objName == "A"){
 						applet.setCoords("Aux_A",x,y);
 					}else if (objName == "B"){
@@ -428,7 +428,7 @@ function addListener_a2_p1(objName) {
 					}else if (objName == "C"){
 						applet.setCoords("Aux_C",x,y);
 					}
-					
+
 					}
 				}
 			}
@@ -451,7 +451,7 @@ function updateListener_a2_p1(objName) {
 	{
 		if((objName == "A")||(objName == "B")||(objName == "C")){
 		var x = applet.getXcoord(objName);
-		var y = applet.getYcoord(objName);	
+		var y = applet.getYcoord(objName);
 		//x = roundNumber(x,0);
 		//y = roundNumber(y,0);
 		applet.unRegisterUpdateListener("updateListener_a2_p1");
@@ -462,7 +462,7 @@ function updateListener_a2_p1(objName) {
 			applet.setCoords("Aux_B",x,y);
 		}else if (objName == "C"){
 			applet.setCoords("Aux_C",x,y);
-		}		
+		}
 		applet.registerUpdateListener("updateListener_a2_p1");
 		}
 	}
@@ -471,17 +471,17 @@ function unset_inicial()
 {
 
 	if (this.resultado == 'sim')
-	{	
-		
+	{
+
 		recomecar_applet_atividade2();
 		$('valor_inicial').removeClassName('desabilitada');
 		$('link_valor_inicial').show();
 		$('unset_inicial').hide();
-		
-		
+
+
 		adicionaEsperando({Parte:0, Questao:'parte1_q1', Item: 0});
 
-		permiteContinuar(false);   
+		permiteContinuar(false);
 		setResp('automacao_atividade_2_parte_0',1);
 		setResp('automacao_atividade_2_parte_1',0);
 		setResp('automacao_atividade_2_parte_2',0);
@@ -531,7 +531,7 @@ function funcao_applet_atividade2(){
 					applet.setCoords("C", applet.getXcoord("A"), applet.getYcoord("A"));
 					applet.setCoords("A", auxX, auxY);
 				}
-			
+
 			}else{
 
 				// C eh o ponto mais perto da origem
@@ -614,14 +614,14 @@ function funcao_applet_atividade2(){
 		muda_cor("A", "preto");muda_cor("B", "preto");muda_cor("C", "preto");
 		applet.setLineThickness("poligono",0);
 		applet.setFilling("poligono", 0.99);
-		
+
 		applet.setCoords("A_1", applet.getXcoord("A"), applet.getYcoord("A"));
 		applet.setCoords("A_2", applet.getXcoord("A"), applet.getYcoord("A"));
 		applet.setCoords("B_1", applet.getXcoord("B"), applet.getYcoord("B"));
 		applet.setCoords("B_2", applet.getXcoord("B"), applet.getYcoord("B"));
 		applet.setCoords("C_1", applet.getXcoord("C"), applet.getYcoord("C"));
 		applet.setCoords("C_2", applet.getXcoord("C"), applet.getYcoord("C"));
-		
+
 		funcao_applet_atividade2_3triangulos();
 		var minhaString = applet.getXML();
 		setResp('xml_applet_p1',minhaString);
@@ -709,7 +709,7 @@ function recomecar_applet_atividade2(){
 	if (!isNaN(applet.getXcoord("C"))){
 		applet.deleteObject("C");
 	}
-	
+
 pontos_a2 = 0;
 construi_triangulo = 0;
 controle_Poli1 = 1;
@@ -742,5 +742,5 @@ $('parte1_tabela11').update($('parte1_q1_b').value);
 $('parte1_tabela12').update($('parte1_q2_b').value);
 $('parte1_tabela13').update($('parte1_q3_b').value);
 var parte1_t14 = processaNumero(getResp('parte1_q1_b')) + processaNumero(getResp('parte1_q2_b')) + processaNumero(getResp('parte1_q3_b'));
-$('parte1_tabela14').update(Number(processaNumero(parte1_t14)).toPrecision(2));		
+$('parte1_tabela14').update(Number(processaNumero(parte1_t14)).toPrecision(2));
 */}
