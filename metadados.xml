@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso>
+    <titulo>Determinantes e Polígonos</titulo>
+    <descricao>Neste software, apresentamos um método simples e eﬁcaz para calcular a área de polígonos utilizando determinantes de matrizes 2×2.</descricao>
+    <estado>Finalizado</estado>
+	<imagem>img_launcher.jpg</imagem>
+	<tipo>software educacional</tipo>
+	<objetivos>Ensinar como calcular áreas usando determinantes; Mostrar uma aplicação de determinantes de matrizes 2×2; Reforçar a interpretação geométrica de determinantes.</objetivos>
+	<observacoes>É necessário navegador moderno (Firefox ou Internet Explorer) plugin Flash 9.0 ou mais recente e máquina Java 1.6 ou mais recente.</observacoes>
+	<nivel>Ensino Médio</nivel>
+	<componente>Matemática</componente>
+	<temas>Geometria e Medidas</temas>
+	<autores>Marcelo Firer</autores>
+	<palavras_chaves>Unicamp, Projeto M³, software educacional, matemática, determinantes, polígonos, área, matrizes</palavras_chaves>
+	<assunto>Matrizes, determinantes; Matrizes, aplicações; Geometria plana, área de polígonos.</assunto>
+</recurso>
+
+

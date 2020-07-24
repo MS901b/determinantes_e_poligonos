@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
+		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
+		<![endif]-->
+		<!--[if lte IE 6]>	
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
+		<![endif]-->
+		
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/notas.js"></script>
+		<script type="text/javascript" src="scripts/bloco.js"></script>
+		<script type="text/javascript" src="scripts/calculadora.js"></script>
+		<script type="text/javascript" src="scripts/rolagem.js"></script>
+		
+		
+		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/referencias.js"></script>
+		<script type="text/javascript" src="scripts/curiosidades.js"></script>
+		<script type="text/javascript" src="scripts/inputs.js"></script>
+		
+		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
+		
+		<script type="text/javascript" src="scripts/atividade1_correcao.js"></script>
+		<script type="text/javascript" src="scripts/atividade1_conteudo.js"></script>
+		<script type="text/javascript" src="scripts/poligonos.js"></script>
+		<script type="text/javascript" src="scripts/inputs.js"></script>
+		<script type="text/javascript">
+			
+			var PosicaoAtual = {Atividade: 1, Parte: 0};
+			var ProximaParte = 'mapa.html';
+		
+			
+				
+			var Popups = $H({
+				link_continuar: {
+					conteudo: 'Você não pode continuar',
+					layout: ['seta_baixo', 'direita'],
+					largura: 11
+				}
+			});
+				
+			var Links = $H({
+				criar: {
+					conteudo: '<img src="imgs/criar_ponto.jpg" alt=" "/>',
+					layout: ['seta_baixo', 'central'],
+					largura: 2
+				}
+			});
+				
+			var Perguntas = $H({
+			});
+		</script>
+		<title>Determinantes e Polígonos</title>
+	</head>
+	<body>
+	
+	<!--
+	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
+	Veja um exemplo no arquivo exemplo_correcao.js
+	-->
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<div class="numero_atividade">1</div>
+					<h1>Determinantes e Polígonos</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Área de triângulos</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<a id="mapa" href="mapa.html">Mapa</a>
+					<a href="introducao.html">Introdução</a>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<div class="limpador"></div>
+			</div>
+			<ul id="partes">
+			</ul>
+			<div id="software">
+				<div id="conteudo">
+						<!-- SalvaLocal -->
+					<div class="salva_local">
+						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
+						   <param name="menu" value="false" />
+						   <param name="movie" value="applets/SalvaLocal.swf" />
+						</object>
+					</div>
+					
+					<div class="texto_solto">
+						<p>Áreas e Determinantes são conceitos intimamente relacionados.</p>
+						
+						<p>Por exemplo, dados dois pontos no plano, P e Q, com coordenadas (Xp,Yp) e (Xq,Yq), respectivamente, a área A do triângulo formado entre P e Q e a origem é dada por:</p>
+						
+						<img style="float: left; margin-left: 50px;" src="imgs/result.png" />	
+						
+						<br class="limpador"></br>
+						<br class="limpador"></br>
+						<p>A seguir, será explicada a necessidade de se considerar o valor absoluto do determinante.</p>
+					</div>
+										
+					<div id="valor_inicial" class="caixa valor_inicial">
+						<div class="item sem_titulo">
+							<p>Clique o botão <a id="criar">Criar Ponto</a>, na ferramenta ao lado, e crie dois pontos em qualquer lugar do plano cartesiano.</p>
+							<a id="link_valor_inicial" href="javascript:;" onclick="javascript:funcao_applet_atividade1();">Construir triângulo</a>	
+							<br class="limpador"></br>
+							<p>Esses pontos (e suas respectivas coordenadas) serão usados nos item “a” e “b” da Questão 1.</p>
+						</div>
+					</div>
+					
+					<div id="questoes">
+						<div id="texto_generico">
+						
+						</div>
+						
+						<div id="parte1_q1"></div>
+						
+						<div id="parte1_q2"></div>					
+						<br class="limpador"></br>
+						<p>Para que o determinante seja positivo, deve-se satisfazer a seguinte condição: ao girar a semirreta OP no sentido anti-horário 
+						até que ela atinja a semirreta OQ, é necessário percorrer um ângulo menor que 180 graus. Se os pontos P (correspondente à primeira 
+						linha da matriz) e Q (corresponde à segunda linha da matriz) forem escolhidos dessa forma, pode-se omitir o valor absoluto da fórmula
+						apresentada no início desta parte.</p>
+						
+						<p>Alternativamente, ao se percorrer o triângulo OPQ no sentido anti-horário a partir do vértice O, deve-se passar, antes, pelo vértice
+						P (correspondente à primeira linha da matriz) e, depois, pelo vértice Q (correspondente à segunda linha da matriz).</p>
+						
+						<p>Se você deseja entender o porquê dessa igualdade, estude com o software "Determinantes e Áreas”.</p>
+
+						<a id="link_continuar">
+							<span class="escondido">Continuar</span>
+						</a>
+						<div class="limpador"></div>
+					</div>
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+		<div id="applet">
+			<div id="borda_applet" class="altura_applet_4 borda sem_fundo">
+				<input type="ggbToolbar" botoes="0,1" idApplet="ggbApplet" id="ggbToolbar1"/>
+				<applet name="ggbApplet" code="geogebra.GeoGebraApplet" codebase="./" archive="jars/geogebra.jar" width="519" height="342" MAYSCRIPT>
+					<param name="filename" value="applets/applet_parte1.ggb" />
+					<param name="framePossible" value="false" />
+					<param name="showResetIcon" value="false" />
+					<param name="enableRightClick" value="false" />
+					<param name="showMenuBar" value="false" />
+					<param name="showToolBar" value="false" />
+					<param name="showToolBarHelp" value="false" />
+					<param name="showAlgebraInput" value="false" />
+					<param name="shiftDragZoom" value="false" />
+					<param name="scriptable" value="true" />
+					<param name="customToolBar" value="0 | 1 |">		
+					<param name="language" value="pt" />
+					<param name="enableShiftDragZoom" value="false" />		
+					<param name="enableLabelDrags" value="false" />				
+				</applet>
+				
+				<div class="canto sup_esq"></div>
+				<div class="canto sup_dir"></div>
+				<div class="canto inf_esq"></div>
+				<div class="canto inf_dir"></div>
+				<div id="associacao"></div>
+			</div>
+		</div>
+		
+		
+		
+		<div id="associado"></div>
+		
+		
+		<div id="ferramentas">
+			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		</div>
+		<div id="calc" class="escondido"></div>
+		
+		
+	</body>
+</html>
