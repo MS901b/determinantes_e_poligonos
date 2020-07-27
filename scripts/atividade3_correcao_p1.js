@@ -37,11 +37,13 @@ function corrige_q_6_a(){
 }
 
 function select_q_4_a(){
-	var applet = document.ggbApplet;
-	applet.setColor("A", 255, 0, 0);
-	applet.setPointSize("A", 4);
-	applet.setPointSize("C", 4);
-	applet.setPointSize("D", 4);
+	if (ggb_abriu == true) {
+		var applet = document.ggbApplet;
+		applet.setColor("A", 255, 0, 0);
+		applet.setPointSize("A", 4);
+		applet.setPointSize("C", 4);
+		applet.setPointSize("D", 4);
+	}
 }
 
 function select_q_5_a(){
@@ -275,11 +277,13 @@ function corrige_q_5_c(valor){
 	}
 
 }
+var ggb_abriu = false;
 function ggbOnInit(){
 	var applet = document.ggbApplet;
-		applet.setMode(15);
-		$('ggbToolbar1_0').click();
-		registerListeners_a4_p2();
+	applet.setMode(15);
+	$('ggbToolbar1_0').click();
+	registerListeners_a4_p2();
+	ggb_abriu = true;
 }
 function registerListeners_a4_p2(){
 	var applet = document.ggbApplet;

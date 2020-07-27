@@ -183,11 +183,13 @@ function funcao_t3(){
 
 }
 
+var ggb_abriu = false;
 function ggbOnInit(){
 	var applet = document.ggbApplet;
 		applet.setMode(1);
 		$('ggbToolbar1_1').click();
 		registerListeners_a3_p2();
+		ggb_abriu = true;
 }
 function registerListeners_a3_p2(){
 	var applet = document.ggbApplet;

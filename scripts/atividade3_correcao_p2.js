@@ -42,6 +42,7 @@ var resp_aluno;
 var maior = 0;
 var xml;
 
+var ggb_abriu = false;
 function ggbOnInit(){
 		if (PosicaoAtual.Parte == 1){
 			var applet = document.ggbApplet;
@@ -120,6 +121,7 @@ function ggbOnInit(){
 			}
 		}
 		registerListeners_a3_p2();
+		ggb_abriu = true;
 }
 
 function select_q_4_a(){
@@ -146,30 +148,32 @@ function corrige_q_6_a(){
 }
 var ver_internas = 1;
 function ver_arestas_internas(booleano){
-	var applet = document.ggbApplet;
-	if (booleano){
-		ver_internas = 0;
-		applet.setVisible("seg0",false);
-		applet.setVisible("seg1",false);
-		applet.setVisible("u",false);
-		applet.setVisible("v",false);
-		applet.setVisible("z",false);
-		applet.setVisible("w",false);
-		applet.setVisible('text2',  false);
-		applet.setVisible('text3',  false);
-		applet.setVisible('text4',  false);
+	if (ggb_abriu == true) {
+		var applet = document.ggbApplet;
+		if (booleano){
+			ver_internas = 0;
+			applet.setVisible("seg0",false);
+			applet.setVisible("seg1",false);
+			applet.setVisible("u",false);
+			applet.setVisible("v",false);
+			applet.setVisible("z",false);
+			applet.setVisible("w",false);
+			applet.setVisible('text2',  false);
+			applet.setVisible('text3',  false);
+			applet.setVisible('text4',  false);
 
-	}else{
-		ver_internas = 1;
-		applet.setVisible("seg0",true);
-		applet.setVisible("seg1",true);
-		applet.setVisible("u",true);
-		applet.setVisible("v",true);
-		applet.setVisible("z",true);
-		applet.setVisible("w",true);
-		applet.setVisible('text2',  true);
-		applet.setVisible('text3',  true);
-		applet.setVisible('text4',  true);
+		}else{
+			ver_internas = 1;
+			applet.setVisible("seg0",true);
+			applet.setVisible("seg1",true);
+			applet.setVisible("u",true);
+			applet.setVisible("v",true);
+			applet.setVisible("z",true);
+			applet.setVisible("w",true);
+			applet.setVisible('text2',  true);
+			applet.setVisible('text3',  true);
+			applet.setVisible('text4',  true);
+		}
 	}
 }
 
