@@ -702,7 +702,7 @@ function verifica_interseccoes_a3_p2(){
 			aresta_a = segbackup[i][0];
 			aresta_b = segbackup[j][0];
 			if ((segbackup[i][1] != segbackup[j][1])&&(segbackup[i][1] != segbackup[j][2])&&(segbackup[i][2] != segbackup[j][1])&&(segbackup[i][2] != segbackup[j][2])){
-				applet.evalCommand("ponto_intersec = Intersection["+aresta_a+","+aresta_b+"]");
+				applet.evalCommand("ponto_intersec = Intersect["+aresta_a+","+aresta_b+"]");
 			}
 			j++;
 		}

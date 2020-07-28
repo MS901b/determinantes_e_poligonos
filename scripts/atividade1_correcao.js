@@ -119,7 +119,7 @@ function addListener_a1_p1(objName) {
 	var applet = document.ggbApplet;
 	var strType = applet.getObjectType(objName);
 	var strCommand = applet.getCommandString(objName);
-
+	
 		if (strType == "point" )
 			{
 				if (((strCommand.length > 1)&&(strCommand.length < 9))||(pontos_a1 >= 2)){
@@ -189,10 +189,17 @@ function addListener_a1_p1(objName) {
 }
 
 function updateListener_a1_p1(objName) {
+	
 	var applet = document.ggbApplet;
-	var x = applet.getXcoord(objName);
-	var y = applet.getYcoord(objName);
-
+	
+	var strType = applet.getObjectType(objName);
+	if (strType == "point" )
+	{
+		var x = applet.getXcoord(objName);
+		var y = applet.getYcoord(objName);
+	
+	}
+	
 	if (objName == "P"){
 		$('parte1_q1_a_11').update(x);
 		$('parte1_q1_a_12').update(y);
@@ -220,7 +227,7 @@ function updateListener_a1_p1(objName) {
 		$('parte1_q2_a3').update((det2/2));
 		$('parte1_q2_a4').update((det1/2));
 	}
-
+		
 }
 
 function funcao_applet_atividade1(){

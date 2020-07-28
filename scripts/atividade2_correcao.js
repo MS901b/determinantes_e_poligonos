@@ -454,7 +454,7 @@ function updateListener_a2_p1(objName) {
 		var y = applet.getYcoord(objName);
 		//x = roundNumber(x,0);
 		//y = roundNumber(y,0);
-		applet.unRegisterUpdateListener("updateListener_a2_p1");
+		applet.unregisterUpdateListener("updateListener_a2_p1");
 		//applet.setCoords(objName,x,y);
 		if (objName == "A"){
 			applet.setCoords("Aux_A",x,y);
