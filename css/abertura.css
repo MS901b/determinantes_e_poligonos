@@ -414,21 +414,8 @@ sub, sup {font-size: 10px;}
 
 
 
-/*.botao {height:21px; font-size: 11px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}*/
-.botao {
-  background-color: white;
-  color: black;
-  border: 2px solid #e7e7e7;
-  border-radius: 12px;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 16px 0px;
-  cursor: pointer;
-}
-/*.botao:active{border: 2px inset #CCC;}*/
+.botao {height:21px; font-size: 11px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}
+.botao:active{border: 2px inset #CCC;}
 .botao.desabilitado, .botao.desabilitado:active{color: #999; border: 2px outset grey;}
 .botao_pequeno {width: 50px;}
 .botao_medio {width: 80px;}
