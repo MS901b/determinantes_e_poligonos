@@ -428,7 +428,7 @@ sub, sup {font-size: 10px;}
   margin: 16px 0px;
   cursor: pointer;
 }
-.botao:active{border: 2px inset #CCC;}
+/*.botao:active{border: 2px inset #CCC;}*/
 .botao.desabilitado, .botao.desabilitado:active{color: #999; border: 2px outset grey;}
 .botao_pequeno {width: 50px;}
 .botao_medio {width: 80px;}
