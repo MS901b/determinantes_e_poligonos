@@ -49,7 +49,7 @@ function ggbOnInit(){
 			if (flag){
 				var minhaString = getResp('applet_a3_p2');
 			}
-			if(minhaString != 'undefined'){
+			if ( (minhaString != 'undefined') && (minhaString != null) ) {
 			applet.setXML(minhaString);
 			if (applet.isDefined('Baux1')){
 				applet.deleteObject('Baux1');
